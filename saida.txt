@@ -1,35 +1,38 @@
 Estado do log nas últimas 24 horas:
 ==================================================
-[2025-04-12 21:59:22] Tag <pre> não encontrada, tentando conteúdo bruto
-Estado do log 2025-04-12 21:59:22:
+[2025-04-12 22:22:58] Tag <pre> não encontrada, tentando conteúdo bruto
+Estado do log 2025-04-12 22:22:58:
+Tempo total: 0.912743 segundos
  -------------------------------- 
-|     12/04/2025 @ 18:05:58      |
+|     12/04/2025 @ 19:05:56      |
  -------------------------------- 
-| CPU Usage: 379%                |
-| Max Memory: 2560 KB            |
-| Execution time: 0.93 s         |
+| CPU Usage: 380%                |
+| Max Memory: 2816 KB            |
+| Execution time: 0.91 s         |
 | Exit code: 0 (success)         |
  -------------------------------- 
 
-Estado do log 2025-04-12 21:59:22:
+Estado do log 2025-04-12 22:22:58:
+Tempo total: 0.912743 segundos
  -------------------------------- 
-|     12/04/2025 @ 18:05:58      |
+|     12/04/2025 @ 19:05:56      |
  -------------------------------- 
-| CPU Usage: 379%                |
-| Max Memory: 2560 KB            |
-| Execution time: 0.93 s         |
+| CPU Usage: 380%                |
+| Max Memory: 2816 KB            |
+| Execution time: 0.91 s         |
 | Exit code: 0 (success)         |
  -------------------------------- 
 
-[2025-04-12 21:59:22] Log válido
+[2025-04-12 22:22:58] Log válido
 ==================================================
 Estado atual do log:
+Tempo total: 0.912743 segundos
  -------------------------------- 
-|     12/04/2025 @ 18:05:58      |
+|     12/04/2025 @ 19:05:56      |
  -------------------------------- 
-| CPU Usage: 379%                |
-| Max Memory: 2560 KB            |
-| Execution time: 0.93 s         |
+| CPU Usage: 380%                |
+| Max Memory: 2816 KB            |
+| Execution time: 0.91 s         |
 | Exit code: 0 (success)         |
  -------------------------------- 
 
