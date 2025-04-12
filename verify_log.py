@@ -11,8 +11,7 @@ import threading
 app = Flask(__name__)
 
 URL = "https://bruno.dcomp.ufs.br/aulas/paa/notas/jefersonoliveira_202100045662_criptografia.log"
-log_file = "/app/saida.txt"
-
+log_file = "saida.txt"  # Caminho relativo ao diretório do repositório
 # Configura o logging para salvar apenas em saida.txt
 logging.basicConfig(
     level=logging.INFO,
@@ -148,9 +147,4 @@ def run_flask():
     app.run(host='0.0.0.0', port=8080)
 
 if __name__ == "__main__":
-    flask_thread = threading.Thread(target=run_flask)
-    flask_thread.start()
-    try:
-        check_log()
-    except KeyboardInterrupt:
-        logging.info("Script interrompido pelo usuário.")
+    check_log()  # Executa uma vez
