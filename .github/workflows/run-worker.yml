@@ -2,30 +2,30 @@ name: Executar script Python a cada 1 hora
 
 on:
   schedule:
-    - cron: '0 * * * *'  # executa todo início de hora
-  workflow_dispatch:  # permite rodar manualmente também
+    - cron: '0 * * * *'
+  workflow_dispatch:
 
 jobs:
   run-script:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+    - name: Clonar repositório
+      uses: actions/checkout@v3
 
-      - name: Configurar Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.11
+    - name: Instalar dependências
+      run: |
+        cd log-verifier
+        pip install -r requirements.txt
 
-      - name: Instalar dependências
-        run: pip install -r requirements.txt
-
-      - name: Executar script
-        run: python script.py
-        
-      - name: Commit do log atualizado
-        run: |
-          git config --global Jeff-green3002 "github-actions"
-          git config --global jeferson.santos@softgreen.com.br "github-actions@github.com"
-          git add saida.txt
-          git commit -m "Atualização automática do log [skip ci]" || echo "Nada a commitar"
-          git push
+    - name: Executar script Python
+      run: |
+        cd log-verifier
+        python verify_log.py      
+    - name: Commit do log atualizado
+      run: |
+        git config --global Jeff-green3002 "github-actions"
+        git config --global jeferson.santos@softgreen.com.br "github-actions@github.com"
+        git add saida.txt
+        git commit -m "Atualização automática do log [skip ci]" || echo "Nada a commitar"
+        git push
