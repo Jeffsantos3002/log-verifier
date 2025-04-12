@@ -2,8 +2,8 @@ name: Executar script Python a cada 1 hora
 
 on:
   schedule:
-    - cron: '0 * * * *' # a cada 1 hora
-  workflow_dispatch:     # permite execução manual
+    - cron: '0 * * * *'  # a cada 1 hora
+  workflow_dispatch:    # permite execução manual
 
 jobs:
   run-script:
@@ -11,20 +11,31 @@ jobs:
 
     steps:
     - name: Clonar repositório
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4  # Atualiza para versão mais recente
+
+    - name: Configurar Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
 
     - name: Instalar dependências
       run: |
-        pip install -r log-verifier/requirements.txt
+        pip install -r requirements.txt
 
     - name: Executar script Python
       run: |
-        python log-verifier/verify_log.py
-   
-    - name: Commit do log atualizado
-      run: |
-        git config --global Jeff-green3002 "github-actions"
-        git config --global jeferson.santos@softgreen.com.br "github-actions@github.com"
-        git add saida.txt
-        git commit -m "Atualização automática do log [skip ci]" || echo "Nada a commitar"
-        git push
+        python verify_log.py &
+        sleep 60  # Aguarda 60 segundos para garantir que o script gere saida.txt
+        pkill -f "python verify_log.py" || true  # Encerra o processo
+
+        - name: Commit do log atualizado
+        run: |
+          git config --global Jeff-green3002 "github-actions"
+          git config --global jeferson.santos@softgreen.com.br "github-actions@github.com"
+          git add saida.txt
+          git commit -m "Atualização automática do log [skip ci]" || echo "Nada a commitar"
+          git push
+  
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
