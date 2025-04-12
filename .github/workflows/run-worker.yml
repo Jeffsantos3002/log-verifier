@@ -2,8 +2,8 @@ name: Executar script Python a cada 1 hora
 
 on:
   schedule:
-    - cron: '0 * * * *'
-  workflow_dispatch:
+    - cron: '0 * * * *' # a cada 1 hora
+  workflow_dispatch:     # permite execução manual
 
 jobs:
   run-script:
@@ -15,13 +15,12 @@ jobs:
 
     - name: Instalar dependências
       run: |
-        cd log-verifier
-        pip install -r requirements.txt
+        pip install -r log-verifier/requirements.txt
 
     - name: Executar script Python
       run: |
-        cd log-verifier
-        python verify_log.py      
+        python log-verifier/verify_log.py
+   
     - name: Commit do log atualizado
       run: |
         git config --global Jeff-green3002 "github-actions"
