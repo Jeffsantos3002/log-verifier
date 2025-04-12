@@ -12,6 +12,8 @@ jobs:
     steps:
     - name: Clonar repositório
       uses: actions/checkout@v4
+      with:
+        persist-credentials: true  # Mantém credenciais para push
 
     - name: Configurar Python
       uses: actions/setup-python@v5
@@ -25,13 +27,13 @@ jobs:
     - name: Executar script Python
       run: |
         python verify_log.py &
-        sleep 10  # Reduzido para 10s, ajuste se necessário
+        sleep 10
         pkill -f "python verify_log.py" || true
 
     - name: Commit do log atualizado
       run: |
-        git config user.name "github-actions"
-        git config user.email "github-actions@github.com"
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
         git add saida.txt
         git commit -m "Atualização automática do log [skip ci]" || echo "Nada a commitar"
         git push
