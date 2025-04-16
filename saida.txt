@@ -1,36 +1,7 @@
 Estado do log nas últimas 24 horas:
 ==================================================
-[2025-04-16 16:11:17] Tag <pre> não encontrada, tentando conteúdo bruto
-Estado do log 2025-04-16 16:11:17:
- -------------------------------- 
-|     14/04/2025 @ 04:03:01      |
- -------------------------------- 
-| CPU Usage: 379%                |
-| Max Memory: 2688 KB            |
-| Execution time: 0.90 s         |
-| Exit code: 0 (success)         |
- -------------------------------- 
-
-Estado do log 2025-04-16 16:11:17:
- -------------------------------- 
-|     14/04/2025 @ 04:03:01      |
- -------------------------------- 
-| CPU Usage: 379%                |
-| Max Memory: 2688 KB            |
-| Execution time: 0.90 s         |
-| Exit code: 0 (success)         |
- -------------------------------- 
-
-[2025-04-16 16:11:17] Log válido
+[2025-04-16 17:07:50] Erro ao acessar o log: 404 Client Error: Not Found for url: https://bruno.dcomp.ufs.br/aulas/paa/notas/jefersonoliveira_202100045662_criptografia.log
 ==================================================
 Estado atual do log:
- -------------------------------- 
-|     14/04/2025 @ 04:03:01      |
- -------------------------------- 
-| CPU Usage: 379%                |
-| Max Memory: 2688 KB            |
-| Execution time: 0.90 s         |
-| Exit code: 0 (success)         |
- -------------------------------- 
-
+Nenhum log válido recebido ainda
 ==================================================
