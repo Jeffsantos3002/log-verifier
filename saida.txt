@@ -1,6 +1,6 @@
 Estado do log nas últimas 24 horas:
 ==================================================
-[2025-12-30 00:49:58] Erro ao acessar o log: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[2025-12-30 02:49:19] Erro ao acessar o log: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
 ==================================================
 Estado atual do log:
 Nenhum log válido recebido ainda
